@@ -1,0 +1,11 @@
+<section class="container">
+  <h1 class="text-center mt-5 mb-5 h2 fw-bold">Наши чайные коллекции</h1>
+  <div class="row g-3 justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12 d-flex" *ngFor="let catalogCard of catalog">
+      <catalog-card class="h-100" [catalogCard]="catalogCard"></catalog-card>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</section>

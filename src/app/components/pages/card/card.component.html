@@ -1,0 +1,33 @@
+<section class="single-product-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-12">
+        <div>
+          <img src="{{catalogCard.image}}" class="card-img-top image-popup-fit-width" alt="{{ catalogCard.title }}">
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <div class="sin-product-details">
+          <h3>{{ catalogCard.title }}</h3>
+
+          <div class="product-price clearfix">
+                                <span class="price">
+                                    <span><span class="woocommerce-Price-currencySymbol">999.00</span>₽</span>
+                                </span>
+          </div>
+          <div class="pro-excerp">
+            <p>
+              {{ catalogCard.description }}
+            </p>
+          </div>
+          <button class="btn btn-primary hvr-grow-rotate mt-auto mb-2" style="--bs-btn-padding-x: 40px;" [routerLink]="'/order'" [queryParams]="{product: catalogCard.title}">
+            Купить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</section>

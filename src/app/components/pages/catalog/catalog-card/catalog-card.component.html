@@ -1,0 +1,10 @@
+<div class="card h-100 wow animate__fadeInLeft">
+  <img src="{{catalogCard.image}}" class="card-img-top image-popup-fit-width" alt="{{ catalogCard.title }}">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title fw-bold">{{ catalogCard.title }}</h5>
+    <p class="card-text flex-grow-1">{{ catalogCard.description | shortDescription }}</p>
+    <button class="btn btn-primary hvr-grow-rotate mt-auto" style="--bs-btn-padding-x: 40px;" [routerLink]="['/catalog', catalogCard.id]">
+      Подробнее
+    </button>
+  </div>
+</div>

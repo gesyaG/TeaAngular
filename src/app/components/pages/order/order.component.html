@@ -1,0 +1,119 @@
+<div *ngIf="showPopup" class="text-center mt-5">
+  <h2 class="fw-bold mb-3">Спасибо за заказ!</h2>
+</div>
+
+<section class="container min-vh-100">
+  <form class="form wow animate__zoomInDown" #formElement [formGroup]="formValues">
+    <h2 class="text-center mt-5 mb-5 h2 fw-bold">Сделать заказ</h2>
+    <div class="grid col-md-6 mx-auto">
+      <div class="row mt-2">
+        <label class="col-lg-4 position-relative mb-3">
+          Имя
+          <input
+            class="form-control me-2"
+            id="name-input"
+            type="text"
+            formControlName="name"
+          >
+          <span *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched)" class="text-danger small">
+            Имя не заполнено
+          </span>
+          <span *ngIf="name?.errors?.['pattern'] && !(name?.errors?.['required']) && (name?.dirty || name?.touched)"
+                class="text-danger small">
+            Имя должно содержать только буквы
+          </span>
+        </label>
+
+        <label class="col-lg-4 position-relative mb-3">
+          Фамилия
+          <input
+            class="form-control me-2"
+            id="last_name-input"
+            type="text"
+            formControlName="last_name"
+          >
+
+          <span *ngIf="last_name?.errors?.['required'] && (last_name?.dirty || last_name?.touched)"
+                class="text-danger small">
+            Фамилия не заполнена
+          </span>
+          <span
+            *ngIf="last_name?.errors?.['pattern'] && !(last_name?.errors?.['required']) && (last_name?.dirty || last_name?.touched)"
+            class="text-danger small">
+            Фамилия должна содержать только буквы
+          </span>
+        </label>
+        <label class="col-lg-4">
+          Телефон
+          <input class="form-control me-2" id="phone-input" type="text" formControlName="phone">
+          <span *ngIf="phone?.errors?.['required'] && (phone?.dirty || phone?.touched)" class="text-danger small">
+            Телефон не заполнен
+          </span>
+          <span *ngIf="phone?.errors?.['pattern'] && !(phone?.errors?.['required']) && (phone?.dirty || phone?.touched)"
+                class="text-danger small">
+             В поле Телефон можно вводить только цифры(11) и знак
+          </span>
+        </label>
+      </div>
+      <div class="row mt-2">
+        <label class="col-lg-6">
+          Страна
+          <input class="form-control me-2" id="country-input" type="text" formControlName="country">
+          <span *ngIf="country?.errors?.['required'] && (country?.dirty || country?.touched)" class="text-danger small">
+            Страна не заполнена
+          </span>
+          <span
+            *ngIf="country?.errors?.['pattern'] && !(country?.errors?.['required']) && (country?.dirty || country?.touched)"
+            class="text-danger small">
+             В поле страна можно вводить только буквы, пробелы и дефисы
+          </span>
+        </label>
+        <label class="col-lg-6">
+          Индекс
+          <input class="form-control me-2" id="index-input" type="text" formControlName="zip">
+          <span *ngIf="zip?.errors?.['required'] && (zip?.dirty || zip?.touched)" class="text-danger small">
+            Индекс не заполен
+          </span>
+          <span *ngIf="zip?.errors?.['pattern'] && !(zip?.errors?.['required']) && (zip?.dirty || zip?.touched)"
+                class="text-danger small">
+             В поле индекс можно ввести только цифры(6)
+          </span>
+        </label>
+      </div>
+      <div class="row mt-2">
+        <label class="col-lg-12">
+          Адрес
+          <input class="form-control me-2" id="address-input" type="text" formControlName="address">
+        </label>
+        <span *ngIf="address?.errors?.['required'] && (address?.dirty || address?.touched)" class="text-danger small">
+            Адрес не заполен
+          </span>
+        <span
+          *ngIf="address?.errors?.['pattern'] && !(address?.errors?.['required']) && (address?.dirty || address?.touched)"
+          class="text-danger small">
+             Неправильный формат адреса
+        </span>
+      </div>
+      <div class="row mt-2">
+        <label class="col-lg-12">
+          Товар
+          <input class="form-control me-2" id="product-input" type="text" formControlName="product">
+        </label>
+      </div>
+      <div class="row mt-2">
+        <label class="col-lg-12">
+          Комментарий к заказу
+          <input class="form-control me-2" id="comment-input" type="text" formControlName="comment">
+        </label>
+      </div>
+      <div>
+        <button class="btn btn-primary mt-3 mb-4 hvr-buzz" id="send" style="--bs-btn-padding-x: 40px;" (click)="send()">
+          Отправить
+        </button>
+        <p *ngIf="submitError" class="text-danger small mt-2">
+          Произошла ошибка. Попробуйте еще раз.
+        </p>
+      </div>
+    </div>
+  </form>
+</section>

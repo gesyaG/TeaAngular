@@ -1,0 +1,41 @@
+.slider {
+  position: relative;
+}
+
+.slick-next:before {
+  content: none;
+}
+
+.slick-prev::before {
+  content: none;
+}
+
+.slider .slick-arrow {
+  position: absolute;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #076BFF;
+}
+
+.slider .slick-arrow.slick-prev {
+  left: 15px;
+  background: url("../../../../assets/images/VectorPrev.png") 13px 9px no-repeat white;
+
+}
+
+.slider .slick-arrow.slick-next {
+  right: 15px;
+  background: url("../../../../assets/images/VectorNext.png") 13px 9px no-repeat white;
+}
+
+.ui-state-default {
+  border: none;
+  background: url("../../../../assets/images/down.png") 97% no-repeat #007fff;
+  color: #fff;
+}
+
+.ui-state-active {
+  background: url("../../../../assets/images/up.png") 97% no-repeat #007fff;
+}

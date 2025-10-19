@@ -1,0 +1,65 @@
+<div #popup class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Посмотрите наши чайные коллекции</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [routerLink]="'/catalog'" >Смотреть</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closePopup()">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="container mt-5 ">
+  <div #slider class="slider single-item wow animate__pulse">
+    <div class="">
+      <img src="assets/images/chay-s-apelsinom-sayt-2%201.png" class="mw-100 mh-100"  alt=tea>
+    </div>
+    <div class="">
+      <img src="assets/images/Баннер2.png" class="mw-100 mh-100"  alt="tea">
+    </div>
+    <div class="">
+      <img src="assets/images/Баннер3.png" class="mw-100 mh-100"  alt="tea">
+    </div>
+  </div>
+</section>
+
+<section class="container ">
+  <h2 class="text-center mt-5 mb-5 h2 fw-bold ">Ответы на часто задаваемые вопросы</h2>
+  <div  #accordion class="col-lg-7 mx-auto mb-5">
+    <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">Собираете ли вы подарочные боксы?</h3>
+    <div class="border-0">
+      <p>
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </p>
+    </div>
+    <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">Сколько у вас разновидностей чая?</h3>
+    <div class="border-0 ">
+      <p>
+        Весь ассортимент представлен на сайте.
+      </p>
+    </div>
+    <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">В какой срок осуществляется доставка?</h3>
+    <div class="border-0 ">
+      <p>
+        Зависит от вашего местоположения. Наша умная система сразу всё высчитывает, как только вы выбираете
+        точку отправки.
+      </p>
+    </div>
+    <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">У вас обновляется ассортимент?</h3>
+    <div class="border-0 ">
+      <p>
+        Безусловно это так, у нас есть коллеции приуроченные к абсолютно разным событиям, и они сменяют друг
+        друга!
+      </p>
+    </div>
+    <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">Какого объема у вас пачки чая?</h3>
+    <div class="border-0">
+      <p>
+        Варьируется от небольших одноразовых порций до крупных упаковок для оптовых покупателей или кафе.
+      </p>
+    </div>
+  </div>
+</section>
