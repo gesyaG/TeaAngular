@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CatalogType} from "../../../types/catalog.type";
+import {CatalogType} from "../../../../types/catalog.type";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CardService} from "../../../services/card.service";
+import {CardService} from "../../../shared/services/card.service";
 import {tap} from "rxjs";
 
 @Component({

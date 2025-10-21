@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CatalogType} from "../../../../types/catalog.type";
+import {CatalogType} from "../../../../../types/catalog.type";
 
 @Component({
   selector: 'catalog-card',

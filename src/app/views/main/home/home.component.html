@@ -1,34 +1,40 @@
-<div #popup class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Посмотрите наши чайные коллекции</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" [routerLink]="'/catalog'" >Смотреть</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closePopup()">Закрыть</button>
+<ng-template #popup>
+  <div tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Посмотрите наши чайные коллекции</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" [routerLink]="'/catalog'">Смотреть</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closePopup()">Закрыть</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
 
-<section class="container mt-5 ">
-  <div #slider class="slider single-item wow animate__pulse">
-    <div class="">
-      <img src="assets/images/chay-s-apelsinom-sayt-2%201.png" class="mw-100 mh-100"  alt=tea>
+<ngb-carousel class="container mt-5 ">>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../../assets/images/chay-s-apelsinom-sayt-2%201.png" alt="Random first slide"/>
     </div>
-    <div class="">
-      <img src="assets/images/Баннер2.png" class="mw-100 mh-100"  alt="tea">
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../../assets/images/Баннер2.png" alt="Random second slide"/>
     </div>
-    <div class="">
-      <img src="assets/images/Баннер3.png" class="mw-100 mh-100"  alt="tea">
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../../assets/images/Баннер3.png" alt="Random third slide"/>
     </div>
-  </div>
-</section>
+  </ng-template>
+</ngb-carousel>
 
 <section class="container ">
   <h2 class="text-center mt-5 mb-5 h2 fw-bold ">Ответы на часто задаваемые вопросы</h2>
-  <div  #accordion class="col-lg-7 mx-auto mb-5">
+  <div #accordion class="col-lg-7 mx-auto mb-5">
     <h3 class="rounded mb-3 mt-0 fw-bold pb-4 pt-4">Собираете ли вы подарочные боксы?</h3>
     <div class="border-0">
       <p>

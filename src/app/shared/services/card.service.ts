@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {CatalogType} from "../types/catalog.type";
+import {CatalogType} from "../../../types/catalog.type";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {DataType} from "../types/data.type";
+import {DataType} from "../../../types/data.type";
 
 @Injectable({
   providedIn: 'root'

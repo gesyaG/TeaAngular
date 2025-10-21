@@ -1,9 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { FormBuilder, Validators } from "@angular/forms";
-import { regexValidatorDirective } from "../../../directives/regex-validator.directive";
+import { regexValidatorDirective } from "../../shared/directives/regex-validator.directive";
 import { HttpClient } from "@angular/common/http";
-import { CardService } from "../../../services/card.service";
+import { CardService } from "../../shared/services/card.service";
 import {DataType} from "../../../types/data.type";
 
 @Component({

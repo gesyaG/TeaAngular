@@ -1,36 +1,30 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Subscription, timer } from 'rxjs';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Subscription, timer} from 'rxjs';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 declare var $: any;
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-main',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('slider') sliderRef!: ElementRef;
   @ViewChild('accordion') accordionRef!: ElementRef;
-  @ViewChild('popup') popupRef!: ElementRef;
+  @ViewChild('popup') popup!: TemplateRef<ElementRef>;
 
   private popupSubscription!: Subscription;
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {
+  }
 
   ngOnInit(): void {
-    this.popupSubscription = timer(10000).subscribe(() => {
-      this.openPopup();
-    });
   }
 
   ngAfterViewInit(): void {
-    if (this.sliderRef?.nativeElement) {
-      $(this.sliderRef.nativeElement).slick({
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 3000
-      });
-    }
+    this.popupSubscription = timer(10000).subscribe(() => {
+      this.openPopup();
+    });
 
     if (this.accordionRef?.nativeElement) {
       $(this.accordionRef.nativeElement).accordion({
@@ -50,14 +44,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   openPopup(): void {
-    if (this.popupRef?.nativeElement) {
-      $(this.popupRef.nativeElement).modal('show');
-    }
+    this.modalService.open(this.popup, {});
   }
 
   closePopup(): void {
-    if (this.popupRef?.nativeElement) {
-      $(this.popupRef.nativeElement).modal('hide');
-    }
+    this.modalService.dismissAll();
   }
 }

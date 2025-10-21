@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {CatalogType} from "../../../types/catalog.type";
+import {CatalogType} from "../../../../types/catalog.type";
 import {Router} from "@angular/router";
 import {tap} from "rxjs";
-import {CardService} from "../../../services/card.service";
+import {CardService} from "../../../shared/services/card.service";
 
 @Component({
   selector: 'app-catalog',
